@@ -1,4 +1,4 @@
-# rapid_medical_info_system
+# doctor_home
 
 A new Flutter project.
 
