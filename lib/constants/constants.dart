@@ -10,6 +10,12 @@ class Constants {
   static Color dark_blue = Color(0xFF0063B8); //0xFF5640FC
   static Color blue = Color(0xFF329CFA);
   static Color mid_blue = Color(0xFF178AEE);
+  static Color light_blue = Color(0xFF8ABDFD);
+  static Color light_light_blue = Color(0xFFB3D2FC);
+  static Color tr_light_blue = Color(0xFFCEE4FF);
+  static Color light_light_blue_op = Color(0x5EB3D2FC);
+  static Color tr_light_blue_op = Color(0x70CEE4FF);
+  // static Color light_blue = Color(0xFF8ABDFD);
 
   // static Color dark_blue = Color(0xFF0063B8);//0xFF5640FC
   // static Color blue = Color(0xFF329CFA);

@@ -32,11 +32,11 @@ class LoginController extends GetxController {
         var response = json.decode(value.body);
 
         isLoading(false);
-        debugPrint('logIn patient  ${value.body}');
+        debugPrint('logIn patient  ${value.body}  ${response['id'][0]['id']}');
         if(response['status']){
           SharedPreferences.getInstance().then((value){
             value.setBool("logged", true);
-            value.setString("id", idController.text);
+            value.setString("id", response['id'][0]['id'].toString());
             value.setString("type", 'P');
           });
           Get.offAll(()=> HomeScreen(source: 'P',));
@@ -92,11 +92,11 @@ class LoginController extends GetxController {
       }).then((value) {
         var response = json.decode(value.body);
         isLoading(false);
-        debugPrint('logInMedStuff patient $response ${response['status']}');
+        debugPrint('logInMedStuff patient $response ');
         if(response['status']){
           SharedPreferences.getInstance().then((value){
             value.setBool("logged", true);
-            value.setString("id", idController.text);
+            value.setString("id", response['id'][0]['id']);
             value.setString("type", 'M');
           });
           Get.offAll(()=> HomeScreen(source: 'M'));
@@ -157,7 +157,7 @@ class LoginController extends GetxController {
         if(response['status']){
           SharedPreferences.getInstance().then((value){
             value.setBool("logged", true);
-            value.setString("id", idController.text);
+            value.setString("id", response['id'][0]['id']);
             value.setString("type", 'A');
           });
           Get.offAll(()=> HomeScreen(source: 'A'));

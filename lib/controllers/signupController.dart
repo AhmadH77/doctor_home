@@ -42,7 +42,7 @@ class SignupController extends GetxController {
         if(response['status']) {
           SharedPreferences.getInstance().then((value){
             value.setBool("logged", true);
-            value.setString("id", idController.text);
+            value.setString("id", response['id'][0]['id']);
             value.setString("type", 'P');
           });
           Get.offAll(()=> HomeScreen(source: 'P',));
@@ -110,7 +110,7 @@ class SignupController extends GetxController {
         if(response['status']) {
           SharedPreferences.getInstance().then((value){
             value.setBool("logged", true);
-            value.setString("id", idController.text);
+            value.setString("id", response['id'][0]['id']);
             value.setString("type", 'M');
           });
           Get.offAll(()=> HomeScreen(source: 'M',));

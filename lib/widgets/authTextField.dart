@@ -8,11 +8,15 @@ class AuthTextField extends StatelessWidget {
       this.obscureText,
       required this.controller,
       this.hintStyle,
+      this.required = true,
+      this.enabled = true,
       this.keyboardType, this.maxLines = 1, this.borderColor,
       })
       : super(key: key);
   final String? labelText;
   final bool? obscureText;
+  final bool? required;
+  final bool? enabled;
   final Color? borderColor;
   final int? maxLines;
   final TextStyle? hintStyle;
@@ -23,11 +27,15 @@ class AuthTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
+        enabled: enabled,
         maxLines: maxLines,
         controller: controller,
         validator: (value) {
-          if (value!.isEmpty) {
-            return "This Field is required";
+
+          if(required!){
+            if (value!.isEmpty) {
+              return "This Field is required";
+            }
           }
           return null;
         },

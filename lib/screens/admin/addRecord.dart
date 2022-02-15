@@ -55,6 +55,16 @@ class _AddRecordPageState extends State<AddRecordPage> {
                       alignment: Alignment.center,
                       margin: EdgeInsets.symmetric(horizontal: 20),
                       child: AuthTextField(
+                        required: false,
+                          borderColor: Colors.black,
+                          controller: controller.endemicController,
+                          labelText: "Please specify Endemic if have any"),
+                    ),
+                    SizedBox(height: size.height * 0.03),
+                    Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(horizontal: 20),
+                      child: AuthTextField(
                           maxLines: 10,
                           borderColor: Colors.black,
                           controller: controller.diseaseController,
