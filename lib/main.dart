@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Constants().createMaterialColor(Constants.teal),
 
       ),
-      home: StartScreen(),
+      home: Main(),
     );
   }
 }
